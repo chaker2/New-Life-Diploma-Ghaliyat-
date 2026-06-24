@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>دبلومة الحياة الجديدة — غاليات</title>
+<meta name="description" content="النسخة الإلكترونية لدبلومة الحياة الجديدة (غاليات) — محاضرات، مقررات، مستندات، صوتيات وموارد." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============ HEADER / NAV ============ -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#home" class="brand" onclick="showPage('home')">
+      <span class="brand-mark">غ</span>
+      <span class="brand-text">
+        <strong>دبلومة الحياة الجديدة</strong>
+        <small>غاليات — رحلة تربوية للفتيات</small>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-label="القائمة" onclick="document.querySelector('.main-nav').classList.toggle('open')">☰</button>
+    <nav class="main-nav">
+      <a href="#home"      onclick="showPage('home')">الرئيسية</a>
+      <a href="#courses"   onclick="showPage('courses')">المنهج</a>
+      <a href="#videos"    onclick="showPage('videos')">الفيديوهات</a>
+      <a href="#documents" onclick="showPage('documents')">المستندات</a>
+      <a href="#audio"     onclick="showPage('audio')">الصوتيات</a>
+      <a href="#resources" onclick="showPage('resources')">الموارد</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+<!-- ============ HOME ============ -->
+<section id="home" class="page active">
+  <div class="hero">
+    <h1>دبلومة الحياة الجديدة — غاليات</h1>
+    <p class="lead">رحلة تربوية وروحية متكاملة <strong>للفتيات</strong>، تجمع بين الدروس النظرية وورش العمل والتسجيلات والمقالات المختارة على مدار سبعة أسابيع.</p>
+    <p class="sub">تأهيل مفاهيمي تأصيلي ومهاري تطبيقي — مع نماذج تقييم أسبوعية لمتابعة المشاركات.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#courses" onclick="showPage('courses')">ابدئي المنهج</a>
+      <a class="btn ghost"   href="#videos"  onclick="showPage('videos')">شاهدي المحاضرات</a>
+    </div>
+  </div>
+
+  <div class="grid features">
+    <div class="card feature"><h3>أنتِ غالية</h3><p>وجود الله، الاستقامة، العاطفة، وفهم الذات.</p></div>
+    <div class="card feature"><h3>الصلاة والعبادة</h3><p>السعادة واللذة في العبادة، النظام والحدود.</p></div>
+    <div class="card feature"><h3>الأم والأب والمعلم</h3><p>محاور التربية والعلاقات الأسرية والتعليمية.</p></div>
+    <div class="card feature"><h3>أركان المنهج النبوي</h3><p>دراسة الكتاب مع مقالات وتطبيقات.</p></div>
+  </div>
+
+  <div class="card info-block">
+    <h2>محاور الدبلومة</h2>
+    <ul>
+      <li><strong>المحور الأول — أنتِ غالية:</strong> وجود الله، الاستقامة، العاطفة، الغيب.</li>
+      <li><strong>المحور الثاني — الصلاة:</strong> السعادة، اللذة، العبادة، الأسوة النبوية.</li>
+      <li><strong>المحور الثالث — الأم والمعلم:</strong> الوصايا، المحبة، التربية القرآنية.</li>
+      <li><strong>المحور الرابع — أركان المنهج النبوي:</strong> مدارسة كتاب أركان المنهج.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ COURSES ============ -->
+<section id="courses" class="page">
+  <h1 class="page-title">المنهج الأسبوعي</h1>
+  <p class="page-sub">سبعة أسابيع تربوية متدرّجة — مدارسات وورش، محاضرات، مقالات، وتقييمات.</p>
+
+  <div class="legend">
+    <span class="tag t1">مدارسات وورش</span>
+    <span class="tag t2">محاضرات مرئية</span>
+    <span class="tag t3">دروس صوتية</span>
+    <span class="tag t4">مقالات مختارة</span>
+  </div>
+
+  <div id="weeks-list" class="weeks-list"></div>
+</section>
+
+<!-- ============ VIDEOS ============ -->
+<section id="videos" class="page">
+  <h1 class="page-title">المحاضرات المرئية</h1>
+  <p class="page-sub">قوائم تشغيل ومحاضرات الدبلومة على يوتيوب.</p>
+
+  <h2 class="section-title">قوائم التشغيل</h2>
+  <div id="playlists" class="grid"></div>
+
+  <h2 class="section-title">محاضرات مفردة</h2>
+  <div id="videos-list" class="grid videos-grid"></div>
+</section>
+
+<!-- ============ DOCUMENTS ============ -->
+<section id="documents" class="page">
+  <h1 class="page-title">المستندات</h1>
+  <p class="page-sub">دليل الدارسات والبرنامج التفصيلي، مع ملفات إضافية على Google Drive و Box.</p>
+  <div class="grid">
+    <div class="card doc-card">
+      <h3>📘 دليل الدارسات</h3>
+      <p>الدليل الشامل للمشاركات في دبلومة الحياة الجديدة (غاليات).</p>
+      <div class="actions">
+        <a class="btn primary" href="documents/manual.pdf" target="_blank">معاينة</a>
+        <a class="btn ghost"   href="documents/manual.pdf" download>تحميل PDF</a>
+      </div>
+    </div>
+    <div class="card doc-card">
+      <h3>📗 البرنامج التفصيلي</h3>
+      <p>برنامج الدبلومة التفصيلي على مدار الأسابيع السبعة.</p>
+      <div class="actions">
+        <a class="btn primary" href="documents/program.pdf" target="_blank">معاينة</a>
+        <a class="btn ghost"   href="documents/program.pdf" download>تحميل PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">ملفات Google Drive</h2>
+  <div id="drive-list" class="grid"></div>
+
+  <h2 class="section-title">مرفقات Box (كتب وملفات إضافية)</h2>
+  <div id="box-list" class="grid"></div>
+</section>
+
+<!-- ============ AUDIO ============ -->
+<section id="audio" class="page">
+  <h1 class="page-title">الصوتيات</h1>
+  <p class="page-sub">تسجيلات مختارة من حساب الدبلومة على SoundCloud.</p>
+  <div id="audio-list" class="grid"></div>
+</section>
+
+<!-- ============ RESOURCES (Forms + Contact) ============ -->
+<section id="resources" class="page">
+  <h1 class="page-title">الموارد والاستمارات</h1>
+  <p class="page-sub">نماذج التسجيل والتقييم الأسبوعية، وقنوات التواصل.</p>
+
+  <h2 class="section-title">استمارات التقييم</h2>
+  <div id="forms-list" class="grid forms-grid"></div>
+
+  <h2 class="section-title">قنوات التواصل</h2>
+  <div class="card info-block">
+    <ul class="contact">
+      <li>📘 فيسبوك: <strong>دبلومة الحياة الجديدة — غاليات</strong></li>
+      <li>✈️ تليجرام: قناة <strong>غاليات</strong></li>
+      <li>🎧 ساوند كلاود: <strong>حساب الدبلومة</strong></li>
+      <li>▶️ يوتيوب: <strong>قناة الدبلومة</strong></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ VIDEO MODAL ============ -->
+<div id="video-modal" class="modal" onclick="closeVideo(event)">
+  <div class="modal-inner" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeVideo()">×</button>
+    <div id="video-frame-wrap"></div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© دبلومة الحياة الجديدة — غاليات.</p>
+    <p class="muted">نسخة إلكترونية مبسطة من تطبيق الدبلومة.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
